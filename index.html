@@ -2,7 +2,7 @@
 <html lang="bnk">
 <head>
   <meta charset="UTF-8">
-  <title>Benakasemmemii-de Bugambar</title>
+  <title>Benakasemmemii-de Bugambaru</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map { height: 100vh; width: 100%; }
@@ -59,10 +59,10 @@
 
   <script>
 
-    // Bugambar-no kelakii
+    // Bugambaru-no kelaki
     const map = L.map('map').setView([20, 0], 2); // jaganpupu
 
-    // Bugambar-no tapakan (OpenStreetMap)
+    // Bugambaru-no tapakan (OpenStreetMap)
     L.tileLayer(
   "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
   {
@@ -72,7 +72,7 @@
   }
 ).addTo(map);
 
-    // GeoJSON fail-ong nangate-ke kaarya
+    // GeoJSON fail-ong bertate-ke karja
     function loadLayer(url, options) {
       fetch(url)
         .then(r => r.json())
@@ -84,7 +84,7 @@
     const cityLayer = L.layerGroup().addTo(map);
     const countryLayer = L.layerGroup().addTo(map);
 
-    // Naadas-no ekiwisakiis
+    // Naadas-no ekiwisakis
     const countryZoomExceptions = [
   "Onattadanaadas",
   "Ciina",
@@ -103,7 +103,7 @@
   "Japan"
 ];
 
-    // Mu (laagu, samudra, talaga)
+    // Mu (danau, dala, talaga)
     loadLayer("https://raw.githubusercontent.com/arthapuurna/bugambar/main/data/water.geojson", {
       style: {
     color: "#3b6fb6",
@@ -112,7 +112,7 @@
     }
     });
 
-    // Naadas-no siimaas (raha tali)
+    // Naadas-no siimaas (taha tali)
     loadLayer("https://raw.githubusercontent.com/arthapuurna/bugambar/main/data/borders_countries.geojson", {
       style: { color: "#000000", weight: 2 }
     });
@@ -193,7 +193,7 @@ function updateLabelsVisibility() {
 map.on("zoomend", updateLabelsVisibility);
 updateLabelsVisibility();
 
-/* PRANAALIIMENYUU-NO RAMATTAKII */
+/* TATAMENYUU-NO TAMATTAKI */
 map.getContainer().addEventListener("contextmenu", e => {
   e.preventDefault();
 });
@@ -222,10 +222,10 @@ function showContextMenu(latlng) {
       <div class="menu">
         <div class="menu-title">
           ${lat}, ${lng}</div>
-        <div class="menu-item" id="copy-coords">📋 Nedakalkalu-no pratilipi-ong kar</div>
-        <div class="menu-item">📍 Getakiiwali-ong kela</div>
-        <div class="menu-item">🎯 Getakiiwali-ong tuku</div>
-        <div class="menu-item">⭐ Bindu-ong rakam</div>
+        <div class="menu-item" id="copy-coords">📋 Nedakalkalu-no kembar-ong kar</div>
+        <div class="menu-item">📍 Getakiwali-ong kela</div>
+        <div class="menu-item">🎯 Getakiwali-ong tuku</div>
+        <div class="menu-item">⭐ Ti-ong tuta</div>
       </div>
     `)
     .openOn(map);
@@ -239,7 +239,7 @@ setTimeout(() => {
     const text = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
 
     navigator.clipboard.writeText(text).then(() => {
-      btn.innerText = "✔ Pratilipi rakamda";
+      btn.innerText = "✔ Kembar tutada";
     });
   };
 }, 0);
