@@ -2,7 +2,7 @@
 <html lang="bnk">
 <head>
   <meta charset="UTF-8">
-  <title>Benakasemmemii-de Bugambaru</title>
+  <title>Benakii-de Bugambaru</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map { height: 100vh; width: 100%; }
@@ -60,7 +60,7 @@
   <script>
 
     // Bugambaru-no kelaki
-    const map = L.map('map').setView([20, 0], 2); // jaganpupu
+    const map = L.map('map').setView([20, 0], 2); // mondunaka
 
     // Bugambaru-no tapakan (OpenStreetMap)
     L.tileLayer(
@@ -72,7 +72,7 @@
   }
 ).addTo(map);
 
-    // GeoJSON fail-ong bertate-ke karja
+    // GeoJSON fail-mo bertako-ke karja
     function loadLayer(url, options) {
       fetch(url)
         .then(r => r.json())
@@ -84,7 +84,7 @@
     const cityLayer = L.layerGroup().addTo(map);
     const countryLayer = L.layerGroup().addTo(map);
 
-    // Naadas-no ekiwisakis
+    // Naadas-no ekihetakis
     const countryZoomExceptions = [
   "Onattadanaadas",
   "Ciina",
@@ -112,12 +112,12 @@
     }
     });
 
-    // Naadas-no siimaas (taha tali)
+    // Naadas-no repas (taha tali)
     loadLayer("https://raw.githubusercontent.com/arthapuurna/bugambar/main/data/borders_countries.geojson", {
       style: { color: "#000000", weight: 2 }
     });
 
-    // Naadas-no pikas-no siimaas (pirakada tali)
+    // Naadas-no pikas-no repas (pirakada tali)
     loadLayer("https://raw.githubusercontent.com/arthapuurna/bugambar/main/data/borders_admin1.geojson", {
       style: { color: "#000000", weight: 1, dashArray: "6,4" }
     });
@@ -222,10 +222,10 @@ function showContextMenu(latlng) {
       <div class="menu">
         <div class="menu-title">
           ${lat}, ${lng}</div>
-        <div class="menu-item" id="copy-coords">📋 Nedakalkalu-no kembar-ong kar</div>
-        <div class="menu-item">📍 Getakiwali-ong kela</div>
-        <div class="menu-item">🎯 Getakiwali-ong tuku</div>
-        <div class="menu-item">⭐ Ti-ong tuta</div>
+        <div class="menu-item" id="copy-coords">📋 Nedakalkalu-no kembar-mo kar</div>
+        <div class="menu-item">📍 Getakiwali-mo kela</div>
+        <div class="menu-item">🎯 Getakiwali-mo tuku</div>
+        <div class="menu-item">⭐ Pitu-mo tuta</div>
       </div>
     `)
     .openOn(map);
